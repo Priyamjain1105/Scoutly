@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section style="
+    max-width: 500px; 
+    margin: 2.5rem auto;
+    background: #fff; 
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+">
+    <h1 style="
+        font-size: 2rem; 
+        color: #0066cc;
+        text-align: center; 
+        margin-bottom: 2rem;">
+        Sign Up / Login
+    </h1>
+
+    <form action="{{ url_for('login_or_register') }}" method="POST"
+        style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+        <input type="text" name="name" placeholder="Name" required style="
+                padding: 0.9rem 1rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 1rem;
+                outline: none;
+                transition: border-color 0.3s, box-shadow 0.3s;">
+
+        <input type="email" name="email" placeholder="Email" required style="
+                padding: 0.9rem 1rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 1rem;
+                outline: none;
+                transition: border-color 0.3s, box-shadow 0.3s;">
+
+        <select name="role" required style="
+                padding: 0.9rem 1rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 1rem;
+                outline: none;
+                background: #fff;
+                transition: border-color 0.3s, box-shadow 0.3s;">
+            <option value="">Select Role</option>
+            <option value="student">Student</option>
+            <option value="recruiter">Recruiter</option>
+        </select>
+
+        <input type="submit" value="Submit" style="
+                background: #0066cc;
+                color: #fff;
+                border: none;
+                padding: 0.9rem;
+                border-radius: 8px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.3s;">
+    </form>
+</section>
+
+<script>
+    // Focus highlights on inputs and select
+    document.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('focus', () => {
+            el.style.borderColor = '#0066cc';
+            el.style.boxShadow = '0 0 6px rgba(0,102,204,0.3)';
+        });
+        el.addEventListener('blur', () => {
+            el.style.borderColor = '#ccc';
+            el.style.boxShadow = 'none';
+        });
+    });
+
+    // Button hover
+    let btn = document.querySelector('input[type="submit"]');
+    btn.onmouseover = function () {
+        this.style.background = '#004999';
+        this.style.transform = 'scale(1.03)';
+    }
+    btn.onmouseout = function () {
+        this.style.background = '#0066cc';
+        this.style.transform = 'scale(1)';
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - CareerConnect{% endblock %}
+
+{% block content %}
+<section style="text-align: center; padding: 3rem 1rem;">
+    <h2 style="font-size: 2.5rem; color: #0066cc; margin-bottom: 1rem;">
+        Welcome to CareerConnect
+    </h2>
+    <p style="font-size: 1.25rem; max-width: 700px; margin: auto; color: #555;">
+        Your one-stop platform to build stunning online portfolios, explore exclusive job listings,
+        and connect with recruiters and industry professionals.
+        Empower your career journey with the tools and opportunities you deserve.
+    </p>
+    <div style="margin-top: 2.5rem;">
+        <a href="{{ url_for('portfolio_form') }}" style="background-color: #0066cc; color: #fff; padding: 0.75rem 2rem; 
+                      border-radius: 5px; text-decoration: none; font-size: 1rem;
+                      transition: background-color 0.3s ease;">
+            Build Your Portfolio
+        </a>
+        <a href="{{ url_for('jobs') }}" style="background-color: #ffdd57; color: #333; padding: 0.75rem 2rem; 
+                      border-radius: 5px; text-decoration: none; font-size: 1rem;
+                      margin-left: 1rem; transition: background-color 0.3s ease;">
+            Explore Jobs
+        </a>
+    </div>
+</section>
+{% endblock %}

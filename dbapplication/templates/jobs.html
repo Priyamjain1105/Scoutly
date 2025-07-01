@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section style="max-width: 1000px; margin: 2rem auto; text-align: center;">
+    <h1 style="font-size: 2.7rem; color: #0066cc; margin-bottom: 1rem;">
+        Latest Job Openings
+    </h1>
+    <p style="font-size: 1.2rem; color: #555; margin-bottom: 2.5rem;">
+        Discover exciting career opportunities tailored for you.
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+        {% for job in jobs %}
+        <div style="
+            background: #fdfdfd;
+            border-left: 6px solid #0066cc;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            padding: 1.8rem 2.2rem;
+            text-align: left;
+            transition: all 0.3s ease;"
+            onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.12)';"
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+            <h3 style="margin-top: 0; color: #333; font-size: 1.8rem;">
+                {{ job.job_title }}
+                <span style="font-size: 1rem; color: #777;">@ {{ job.company_name }}</span>
+            </h3>
+
+            <div style="margin: 0.8rem 0;">
+                <span style="
+                    background: #0066cc; 
+                    color: #fff;
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    margin-right: 0.5rem;">
+                    {{ job.location }}
+                </span>
+                <span style="
+                    background: #ffdd57; 
+                    color: #333;
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 20px;
+                    font-size: 0.9rem;">
+                    ₹{{ job.salary }}
+                </span>
+            </div>
+
+            <p style="margin: 0.8rem 0; color: #555;">
+                {{ job.job_desc }}
+            </p>
+
+            <a href="mailto:{{ job.contact_email }}" style="
+                display: inline-block;
+                background: #0066cc;
+                color: #fff;
+                padding: 0.6rem 1.4rem;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 0.95rem;
+                transition: background 0.3s ease;">
+                Contact Recruiter
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

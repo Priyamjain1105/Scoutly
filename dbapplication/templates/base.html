@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CareerConnect{% endblock %}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header .logo p {
+            margin: 0.25rem 0 1rem 0;
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #eee;
+            text-align: center;
+            padding: 1.5rem 2rem;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media(max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>CareerConnect</h1>
+            <p>Your Portfolio & Career Development Hub</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home_page') }}">Home</a></li>
+                <li><a href="{{ url_for('student_portfolios') }}">Portfolios</a></li>
+                <li><a href="{{ url_for('job_form') }}">Add Job</a></li>
+                <li><a href="{{ url_for('login_form') }}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Page content goes here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CareerConnect. Helping students connect with opportunities.</p>
+        <p>
+            <a href="{{ url_for('home_page') }}">About</a> |
+            <a href="{{ url_for('home_page') }}">Privacy Policy</a> |
+            <a href="{{ url_for('home_page') }}">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+
+</html>
