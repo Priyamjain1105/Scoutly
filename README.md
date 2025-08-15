@@ -3,7 +3,7 @@
 A Flask + MySQL platform that connects students with employers. Students can create profiles, browse/apply for jobs, and connect with hiring managers. Employers can post jobs and reach out to candidates. Hosted on AWS.
 
 ## Description
-Brief one-liner about the product and target users.
+Helps to connect Students/Working professionals to hiring managers
 
 ## Tech Stack
 - Backend: Flask
@@ -91,8 +91,6 @@ docker-compose up -d
 - Submit a PR
 
 ## License
-MIT (or your chosen license)
+MIT 
 
----
 
-If you’d like, share your preferred tone (formal, friendly, ultra-brief) and any must-have sections (e.g., CHANGELOG, ROADMAP), and I’ll tailor the file.
